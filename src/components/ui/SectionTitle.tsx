@@ -13,8 +13,8 @@ export default function SectionTitle({
 }) {
   return (
     <div className="mb-10 flex flex-col gap-4">
-      <span className="sobrancelha text-asfalto/60">{sobrancelha}</span>
-      <h2 id={id} className="display text-[clamp(2rem,5vw,3.5rem)] text-asfalto">
+      <span className="sobrancelha text-marca-escura/60">{sobrancelha}</span>
+      <h2 id={id} className="display text-[clamp(2rem,5vw,3.5rem)] text-marca-escura">
         {titulo}
       </h2>
     </div>

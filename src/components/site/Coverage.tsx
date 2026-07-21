@@ -19,7 +19,7 @@ export default function Coverage() {
         {CIDADES.map((cidade) => (
           <li
             key={cidade}
-            className="cartao font-dado px-4 py-3 text-sm text-asfalto"
+            className="cartao rounded-full font-dado px-5 py-3 text-sm text-texto"
           >
             {cidade}
           </li>

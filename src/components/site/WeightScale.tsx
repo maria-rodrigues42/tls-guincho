@@ -20,30 +20,28 @@ const CLASSES = [
 
 export default function WeightScale() {
   return (
-    <section
-      id="servicos"
-      aria-labelledby="titulo-servicos"
-      className="mx-auto max-w-6xl px-5 py-20"
-    >
-      <SectionTitle
-        sobrancelha="Do mais leve ao mais pesado"
-        titulo="O que rebocamos"
-        id="titulo-servicos"
-      />
+    <section id="servicos" aria-labelledby="titulo-servicos" className="bg-marca-bg/40 py-20">
+      <div className="mx-auto max-w-6xl px-5">
+        <SectionTitle
+          sobrancelha="Do mais leve ao mais pesado"
+          titulo="O que rebocamos"
+          id="titulo-servicos"
+        />
 
-      <ul className="grid gap-px border-t border-asfalto/10 sm:grid-cols-2 lg:grid-cols-4">
-        {CLASSES.map((classe) => (
-          <li key={classe.nome} className="cartao flex flex-col gap-4 p-6">
-            <div className="flex items-end" aria-hidden="true">
-              <span className={`${classe.altura} w-1.5 bg-perigo`} />
-            </div>
-            <h3 className="display text-2xl text-asfalto">{classe.nome}</h3>
-            <p className="text-sm leading-relaxed text-asfalto/65">
-              {classe.descricao}
-            </p>
-          </li>
-        ))}
-      </ul>
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {CLASSES.map((classe) => (
+            <li key={classe.nome} className="cartao flex flex-col gap-4 p-6">
+              <div className="flex items-end" aria-hidden="true">
+                <span className={`${classe.altura} w-1.5 rounded-full bg-marca`} />
+              </div>
+              <h3 className="display text-2xl text-marca-escura">{classe.nome}</h3>
+              <p className="text-sm leading-relaxed text-texto/65">
+                {classe.descricao}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

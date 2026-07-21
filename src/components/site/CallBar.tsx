@@ -10,7 +10,7 @@ export default function CallBar() {
   const principal = LINHAS[0];
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-asfalto/10 bg-sinal/95 p-3 backdrop-blur sm:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-marca-escura/10 bg-fundo/95 p-3 backdrop-blur sm:hidden">
       <BotaoZap linha={principal} className="w-full">
         Chamar guincho agora
       </BotaoZap>

@@ -17,14 +17,14 @@ function IconeWhatsapp({ className }: { className?: string }) {
  */
 export default function PhoneBlock({ linha }: { linha: Linha }) {
   return (
-    <div className="cartao flex flex-col gap-3 border-cal/15 bg-cal/[0.04] p-5">
-      <span className="sobrancelha text-cal/60">{linha.rotulo}</span>
+    <div className="cartao flex flex-col gap-3 border-white/15 bg-white/[0.04] p-5">
+      <span className="sobrancelha text-white/60">{linha.rotulo}</span>
 
-      <span className="font-dado text-2xl font-semibold tracking-tight text-cal">
+      <span className="font-dado text-2xl font-semibold tracking-tight text-white">
         {linha.numeroExibido}
       </span>
 
-      {linha.nota ? <p className="text-sm text-cal/70">{linha.nota}</p> : null}
+      {linha.nota ? <p className="text-sm text-white/70">{linha.nota}</p> : null}
 
       <div className="mt-1 flex items-center gap-5">
         <a
@@ -36,7 +36,7 @@ export default function PhoneBlock({ linha }: { linha: Linha }) {
         </a>
         <a
           href={linkTelefone(linha)}
-          className="sobrancelha flex min-h-11 items-center gap-2 text-cal/70"
+          className="sobrancelha flex min-h-11 items-center gap-2 text-white/70"
         >
           <Phone className="size-4" aria-hidden="true" />
           Ligar

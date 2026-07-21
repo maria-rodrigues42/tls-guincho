@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sinal: #edefea;
-  --color-asfalto: #1a1d1b;
-  --color-perigo: #ffc700;
+  --color-fundo: #ffffff;
+  --color-texto: #111111;
+  --color-marca-escura: #293681;
+  --color-marca: #4274d9;
+  --color-marca-clara: #95ccdd;
+  --color-marca-bg: #d0e7e6;
   --color-zap: #25d366;
-  --color-zap-escuro: #128c7e;
-  --color-cal: #f7f6f2;
 
   --font-display: var(--fonte-display), ui-sans-serif, system-ui, sans-serif;
   --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
@@ -20,7 +21,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-zap-escuro);
+    outline: 2px solid var(--color-marca);
     outline-offset: 3px;
   }
 }
@@ -45,46 +46,22 @@
     text-transform: uppercase;
   }
 
-  /* Cartão: superfície impressa, não tela de brilho. Repouso = plano,
-     hover/foco = a borda escurece e o cartão levanta — como pegar um
-     objeto de catálogo na mão. Nada de glow: isso é o clichê de fundo
-     escuro que estamos evitando de propósito. */
+  /* Cartão: cantos bem arredondados, sem estado de hover — o repouso é
+     o único estado. */
   .cartao {
-    background-color: #fff;
-    border: 1px solid rgb(26 29 27 / 0.14);
-    transition:
-      border-color 200ms ease,
-      box-shadow 200ms ease,
-      transform 200ms ease;
+    background-color: var(--color-fundo);
+    border: 1px solid rgb(41 54 129 / 0.14);
+    border-radius: 1.25rem;
   }
 
-  .cartao:hover,
-  .cartao:focus-within {
-    border-color: rgb(26 29 27 / 0.4);
-    box-shadow: 0 14px 28px -16px rgb(26 29 27 / 0.28);
-    transform: translateY(-2px);
-  }
-
-  /* Faixa de risco: amarelo e preto de sinalização real de guincho —
-     a mesma linguagem visual da fita que já existe no equipamento do
-     cliente, não uma decoração abstrata. */
+  /* Faixa divisória em tons da marca. */
   .risco {
-    height: 14px;
+    height: 10px;
+    border-radius: 9999px;
     background-image: repeating-linear-gradient(
       115deg,
-      var(--color-perigo) 0 20px,
-      var(--color-asfalto) 20px 40px
+      var(--color-marca) 0 20px,
+      var(--color-marca-clara) 20px 40px
     );
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

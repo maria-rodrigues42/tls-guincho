@@ -1,7 +1,12 @@
 /**
- * Faixa de risco: amarelo e preto de sinalização real de guincho — a
- * mesma linguagem visual da fita que já existe no equipamento do cliente.
+ * Faixa divisória diagonal, nos dois tons de azul da marca. Contida na
+ * mesma largura das seções (não de borda a borda), para as pontas
+ * arredondadas aparecerem.
  */
 export default function ChevronDivider() {
-  return <div className="risco" role="presentation" />;
+  return (
+    <div className="mx-auto max-w-6xl px-5">
+      <div className="risco" role="presentation" />
+    </div>
+  );
 }

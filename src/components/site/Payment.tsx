@@ -15,10 +15,10 @@ export default function Payment() {
         id="titulo-pagamento"
       />
 
-      <ul className="grid gap-px border-t border-asfalto/10 sm:grid-cols-2">
+      <ul className="grid gap-4 sm:grid-cols-2">
         {FORMAS_PAGAMENTO.map((forma) => (
           <li key={forma} className="cartao p-6">
-            <span className="display text-xl text-asfalto">{forma}</span>
+            <span className="display text-xl text-marca-escura">{forma}</span>
           </li>
         ))}
       </ul>

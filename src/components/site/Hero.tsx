@@ -13,17 +13,17 @@ export default function Hero() {
 
   return (
     <section className="mx-auto max-w-6xl px-5 pb-14 pt-8 sm:pt-14">
-      <span className="sobrancelha text-asfalto/60">
+      <span className="sobrancelha text-marca-escura/60">
         24 horas · Três Lagoas e região · MS
       </span>
 
-      <h1 className="display mt-3 max-w-4xl text-[clamp(2.75rem,12vw,6.5rem)] text-asfalto">
+      <h1 className="display mt-3 max-w-4xl text-[clamp(2.75rem,12vw,6.5rem)] text-marca-escura">
         Parou?
         <br />
         A gente vai.
       </h1>
 
-      <p className="mt-5 max-w-md text-lg leading-relaxed text-asfalto/70">
+      <p className="mt-5 max-w-md text-lg leading-relaxed text-texto/70">
         Reboque de moto, carro, utilitário e pesado — a qualquer hora, em Três
         Lagoas e região.
       </p>
@@ -33,11 +33,11 @@ export default function Hero() {
           Chamar no WhatsApp agora
         </BotaoZap>
 
-        <p className="mt-3 text-sm text-asfalto/60">
+        <p className="mt-3 text-sm text-texto/60">
           Linha principal não atendeu?{" "}
           <a
             href={linkWhatsapp(reserva)}
-            className="font-semibold text-asfalto underline underline-offset-2"
+            className="font-semibold text-marca-escura underline underline-offset-2"
           >
             Chame {reserva.numeroExibido}
           </a>

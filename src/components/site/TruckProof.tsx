@@ -41,16 +41,16 @@ export default function TruckProof() {
             id="titulo-caminhao"
           />
 
-          <p className="max-w-md text-lg leading-relaxed text-asfalto/70">
+          <p className="max-w-md text-lg leading-relaxed text-texto/70">
             Seu veículo sobe inteiro na plataforma — não vai puxado, não
             arrasta. É esta a foto do guincho, não um catálogo.
           </p>
 
-          <dl className="mt-8 grid grid-cols-2 gap-px border-t border-asfalto/10">
+          <dl className="mt-8 grid grid-cols-2 gap-4">
             {PROVAS.map((prova) => (
               <div key={prova.rotulo} className="cartao p-5">
-                <dt className="sobrancelha text-asfalto/60">{prova.rotulo}</dt>
-                <dd className="font-dado mt-2 text-base text-asfalto">
+                <dt className="sobrancelha text-marca-escura/60">{prova.rotulo}</dt>
+                <dd className="font-dado mt-2 text-base text-texto">
                   {prova.valor}
                 </dd>
               </div>

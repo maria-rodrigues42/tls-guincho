@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body
-        className={`${archivo.variable} ${overpass.variable} ${overpassMono.variable} antialiased bg-sinal text-asfalto font-corpo selection:bg-perigo/70 selection:text-asfalto`}
+        className={`${archivo.variable} ${overpass.variable} ${overpassMono.variable} antialiased bg-fundo text-texto font-corpo selection:bg-marca-clara/70 selection:text-marca-escura`}
       >
         {children}
       </body>

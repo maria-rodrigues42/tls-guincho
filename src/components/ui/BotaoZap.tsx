@@ -16,8 +16,8 @@ const TAMANHOS = {
 /**
  * O único botão verde da página inteira — é assim que ele fica impossível
  * de não ver. Texto escuro sobre o verde, não branco: branco sobre
- * #25D366 dá contraste 1.8:1 (reprovado); asfalto sobre o mesmo verde dá
- * 8:1. Também lê mais como selo impresso do que como botão de app.
+ * #25D366 dá contraste 1.8:1 (reprovado); texto escuro sobre o mesmo
+ * verde dá 9:1. Sem estado de hover — o repouso é o único estado.
  */
 export default function BotaoZap({
   linha,
@@ -33,7 +33,7 @@ export default function BotaoZap({
   return (
     <a
       href={linkWhatsapp(linha)}
-      className={`flex items-center justify-center bg-zap font-corpo font-bold uppercase tracking-wide text-asfalto transition-colors hover:bg-zap-escuro ${TAMANHOS[tamanho]} ${className}`}
+      className={`flex items-center justify-center rounded-full bg-zap font-corpo font-bold uppercase tracking-wide text-texto ${TAMANHOS[tamanho]} ${className}`}
     >
       <IconeWhatsapp className="size-5 shrink-0 sm:size-6" />
       {children}

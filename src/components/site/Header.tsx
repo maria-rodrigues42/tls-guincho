@@ -11,11 +11,11 @@ export default function Header() {
   const principal = LINHAS[0];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-asfalto/10 bg-sinal/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-marca-escura/10 bg-fundo/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
         <a href="#" className="flex items-center gap-3">
-          <Truck className="size-6 text-asfalto" aria-hidden="true" />
-          <span className="display text-lg text-asfalto">TLS Auto Guincho</span>
+          <Truck className="size-6 text-marca-escura" aria-hidden="true" />
+          <span className="display text-lg text-marca-escura">TLS Auto Guincho</span>
         </a>
 
         <BotaoZap linha={principal} tamanho="compacto">
