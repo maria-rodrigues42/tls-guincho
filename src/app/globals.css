@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #293681;
+  --color-brand-primary: #4274D9;
+  --color-brand-light: #95CCDD;
+  --color-brand-bg: #D0E7E6;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #ffffff; /* Clean white background for a corporate/automotive look */
+    color: #111111;
+    font-family: var(--font-sans);
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+/* Custom Components - Flat, bold, corporate style */
+.btn-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding: 0 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  border-radius: 0; /* Strictly square */
+  border: none;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-dark);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-brand-primary);
+  border: 2px solid var(--color-brand-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+}
+
+.clean-card {
+  background: #f8f9fa;
+  border: none;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.clean-card:hover {
+  background: #ffffff;
+  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
