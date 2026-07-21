@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { animate, type JSAnimation } from "animejs";
 import { linkWhatsapp, type Linha } from "@/lib/contact";
 
 function IconeWhatsapp({ className }: { className?: string }) {
@@ -18,20 +22,49 @@ const TAMANHOS = {
  * de não ver. Texto escuro sobre o verde, não branco: branco sobre
  * #25D366 dá contraste 1.8:1 (reprovado); texto escuro sobre o mesmo
  * verde dá 9:1. Sem estado de hover — o repouso é o único estado.
+ *
+ * `destaque` liga uma respiração ambiente (escala sutil, em loop lento) —
+ * reservada para o CTA principal do herói. É a única animação contínua
+ * da página; os outros botões (cabeçalho, rodapé, seção do caminhão)
+ * ficam parados, para não competir com ela.
  */
 export default function BotaoZap({
   linha,
   children,
   tamanho = "grande",
+  destaque = false,
   className = "",
 }: {
   linha: Linha;
   children: React.ReactNode;
   tamanho?: keyof typeof TAMANHOS;
+  destaque?: boolean;
   className?: string;
 }) {
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    const elemento = ref.current;
+    if (!elemento || !destaque) return;
+
+    const reduzido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduzido) return;
+
+    const respiracao: JSAnimation = animate(elemento, {
+      scale: [1, 1.035, 1],
+      duration: 1800,
+      loop: true,
+      easing: "easeInOutSine",
+    });
+
+    return () => {
+      respiracao.revert();
+    };
+  }, [destaque]);
+
   return (
     <a
+      ref={ref}
       href={linkWhatsapp(linha)}
       className={`flex items-center justify-center rounded-full bg-zap font-corpo font-bold uppercase tracking-wide text-texto ${TAMANHOS[tamanho]} ${className}`}
     >

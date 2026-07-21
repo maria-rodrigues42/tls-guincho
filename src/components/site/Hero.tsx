@@ -29,7 +29,7 @@ export default function Hero() {
       </p>
 
       <div className="mt-7">
-        <BotaoZap linha={principal} className="w-full sm:w-auto">
+        <BotaoZap linha={principal} destaque className="w-full sm:w-auto">
           Chamar no WhatsApp agora
         </BotaoZap>
 

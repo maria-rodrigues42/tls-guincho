@@ -1,4 +1,5 @@
 import SectionTitle from "@/components/ui/SectionTitle";
+import Revelar from "@/components/ui/Revelar";
 
 /**
  * As quatro classes que o cliente reboca, do mais leve ao mais pesado.
@@ -21,7 +22,7 @@ const CLASSES = [
 export default function WeightScale() {
   return (
     <section id="servicos" aria-labelledby="titulo-servicos" className="bg-marca-bg/40 py-20">
-      <div className="mx-auto max-w-6xl px-5">
+      <Revelar className="mx-auto max-w-6xl px-5">
         <SectionTitle
           sobrancelha="Do mais leve ao mais pesado"
           titulo="O que rebocamos"
@@ -41,7 +42,7 @@ export default function WeightScale() {
             </li>
           ))}
         </ul>
-      </div>
+      </Revelar>
     </section>
   );
 }
