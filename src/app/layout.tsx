@@ -1,24 +1,33 @@
 import type { Metadata } from "next";
-import { Roboto, Montserrat } from "next/font/google";
+import { Archivo, Overpass, Overpass_Mono } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 
-const roboto = Roboto({
-  variable: "--font-inter",
+// Os nomes das variáveis do next/font têm que ser DIFERENTES dos tokens
+// --font-* do @theme, senão o Tailwind gera --font-display: var(--font-display)
+// e a referência vira circular. Por isso o prefixo --fonte-.
+const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  axes: ["wdth"],
+  variable: "--fonte-display",
+  display: "swap",
 });
 
-const montserrat = Montserrat({
-  variable: "--font-oswald",
+const overpass = Overpass({
   subsets: ["latin"],
-  weight: ["700", "900"],
+  variable: "--fonte-corpo",
+  display: "swap",
+});
+
+const overpassMono = Overpass_Mono({
+  subsets: ["latin"],
+  variable: "--fonte-dado",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "TLS Auto Guincho | Resgate 24h em Três Lagoas",
-  description: "Guincho rápido e seguro 24 horas. Resgate imediato de carros, motos e caminhões leves. Socorro automotivo de confiança.",
-  keywords: "guincho, reboque, três lagoas, guincho 24h, socorro mecânico, resgate automotivo",
+  title: "TLS Auto Guincho — 24 horas em Três Lagoas e região",
+  description:
+    "Guincho 24 horas em Três Lagoas e região. Reboque de moto, carro, utilitário e pesado. Chame pelo WhatsApp: (67) 99180-0229.",
 };
 
 export default function RootLayout({
@@ -28,22 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <head>
-        {/* Placeholder for Google Tag Manager or Pixel for Paid Traffic */}
-        {/* <Script id="google-tag-manager" strategy="beforeInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-XXXXXXX');
-          `}
-        </Script> */}
-      </head>
       <body
-        className={`${roboto.variable} ${montserrat.variable} antialiased bg-brand-dark text-white font-sans selection:bg-brand-light selection:text-brand-dark`}
+        className={`${archivo.variable} ${overpass.variable} ${overpassMono.variable} antialiased bg-asfalto text-cal font-corpo selection:bg-refletivo selection:text-asfalto`}
       >
-        {/* <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style={{display:"none", visibility:"hidden"}}></iframe></noscript> */}
         {children}
       </body>
     </html>
