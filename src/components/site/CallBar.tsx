@@ -1,19 +1,19 @@
-import { LINHAS } from "@/lib/contact";
-import BotaoZap from "@/components/ui/BotaoZap";
+import Image from "next/image";
 
-/**
- * Barra fixa de chamada, só no mobile — 98% do tráfego é celular, então
- * o botão de WhatsApp fica sempre alcançável, em qualquer ponto da
- * rolagem. No desktop os CTAs do herói/rodapé já dão conta.
- */
 export default function CallBar() {
-  const principal = LINHAS[0];
-
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-marca-escura/10 bg-fundo/95 p-3 backdrop-blur sm:hidden">
-      <BotaoZap linha={principal} className="w-full">
-        Chamar guincho agora
-      </BotaoZap>
-    </div>
+    <a 
+      href="#" 
+      className="fixed bottom-6 right-6 z-50 transition-transform hover:scale-110 active:scale-95"
+      aria-label="Chamar no WhatsApp"
+    >
+      <Image 
+        src="/images/image-removebg-preview.png" 
+        alt="WhatsApp" 
+        width={60} 
+        height={60} 
+        className="drop-shadow-lg"
+      />
+    </a>
   );
 }

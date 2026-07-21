@@ -1,67 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --color-fundo: #ffffff;
-  --color-texto: #111111;
-  --color-marca-escura: #293681;
-  --color-marca: #4274d9;
-  --color-marca-clara: #95ccdd;
-  --color-marca-bg: #d0e7e6;
-  --color-zap: #25d366;
+  --color-fundo: #F7F8F0;
+  --color-texto: #355872;
+  --color-marca-escura: #355872;
+  --color-marca: #7AAACE;
+  --color-marca-clara: #9CD5FF;
+  --color-zap: #25D366;
+  --color-zap-dark: #08210F;
 
-  --font-display: var(--fonte-display), ui-sans-serif, system-ui, sans-serif;
-  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
-  --font-dado: var(--fonte-dado), ui-monospace, monospace;
+  --font-bricolage: var(--font-bricolage);
+  --font-zalando: var(--font-zalando);
+  --font-noto: var(--font-noto);
+  --font-mono: var(--font-mono);
 }
 
 @layer base {
   body {
+    background-color: var(--color-fundo);
+    font-family: var(--font-noto);
     margin: 0;
     min-height: 100vh;
   }
-
-  :focus-visible {
-    outline: 2px solid var(--color-marca);
-    outline-offset: 3px;
-  }
 }
 
-@layer components {
-  /* Display: Archivo no eixo mais largo. Lê como letreiro de lataria. */
-  .display {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-stretch: 125%;
-    line-height: 0.88;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-  }
-
-  /* Sobrancelha e rótulos de dado. */
-  .sobrancelha {
-    font-family: var(--font-dado);
-    font-weight: 600;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-
-  /* Cartão: cantos bem arredondados, sem estado de hover — o repouso é
-     o único estado. */
-  .cartao {
-    background-color: var(--color-fundo);
-    border: 1px solid rgb(41 54 129 / 0.14);
-    border-radius: 1.25rem;
-  }
-
-  /* Faixa divisória em tons da marca. */
-  .risco {
-    height: 10px;
-    border-radius: 9999px;
-    background-image: repeating-linear-gradient(
-      115deg,
-      var(--color-marca) 0 20px,
-      var(--color-marca-clara) 20px 40px
-    );
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hidden {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

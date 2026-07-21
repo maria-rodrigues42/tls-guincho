@@ -1,48 +1,27 @@
-import SectionTitle from "@/components/ui/SectionTitle";
-import Revelar from "@/components/ui/Revelar";
-
-/**
- * As quatro classes que o cliente reboca, do mais leve ao mais pesado.
- *
- * A ordem é informação real, então o marcador de cada estação cresce da
- * esquerda para a direita. Nada de "01 / 02 / 03" — isso seria numerar uma
- * lista que não é uma sequência.
- *
- * As quatro categorias vêm do banner oficial. As descrições são curtas de
- * propósito: só afirmam o escopo da categoria, sem prometer técnica ou
- * equipamento que não foi confirmado com o cliente.
- */
-const CLASSES = [
-  { nome: "Moto", descricao: "Duas rodas, sobre a plataforma.", altura: "h-4" },
-  { nome: "Carro", descricao: "Passeio e SUV.", altura: "h-8" },
-  { nome: "Utilitário", descricao: "Vans e veículos de trabalho.", altura: "h-14" },
-  { nome: "Pesado", descricao: "Guincho pesado.", altura: "h-24" },
-] as const;
+import RevealWrapper from "./RevealWrapper";
 
 export default function WeightScale() {
   return (
-    <section id="servicos" aria-labelledby="titulo-servicos" className="bg-marca-bg/40 py-20">
-      <Revelar className="mx-auto max-w-6xl px-5">
-        <SectionTitle
-          sobrancelha="Do mais leve ao mais pesado"
-          titulo="O que rebocamos"
-          id="titulo-servicos"
-        />
-
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {CLASSES.map((classe) => (
-            <li key={classe.nome} className="cartao flex flex-col gap-4 p-6">
-              <div className="flex items-end" aria-hidden="true">
-                <span className={`${classe.altura} w-1.5 rounded-full bg-marca`} />
-              </div>
-              <h3 className="display text-2xl text-marca-escura">{classe.nome}</h3>
-              <p className="text-sm leading-relaxed text-texto/65">
-                {classe.descricao}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </Revelar>
-    </section>
+    <RevealWrapper className="relative z-10 px-5 pt-[30px] pb-1.5">
+      <div className="font-bricolage font-extrabold text-[28px] text-marca-escura tracking-[-0.03em] text-center mb-[18px]">O que rebocamos</div>
+      <div className="md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-4">
+        <div className="py-[14px] border-b border-[#e2e8e4] md:border-b-0 md:border-b md:border-[#e2e8e4] flex justify-between items-baseline">
+          <span className="font-bricolage font-bold text-[21px] text-marca-escura tracking-[-0.02em]">Moto</span>
+          <span className="font-noto font-normal text-[13px] text-[#93a2aa]">até 300 kg</span>
+        </div>
+        <div className="py-[14px] border-b border-[#e2e8e4] md:border-b-0 md:border-b md:border-[#e2e8e4] flex justify-between items-baseline">
+          <span className="font-bricolage font-bold text-[21px] text-marca-escura tracking-[-0.02em]">Carro de passeio</span>
+          <span className="font-noto font-normal text-[13px] text-[#93a2aa]">hatch e sedan</span>
+        </div>
+        <div className="py-[14px] border-b border-[#e2e8e4] md:border-b-0 md:border-b md:border-[#e2e8e4] flex justify-between items-baseline">
+          <span className="font-bricolage font-bold text-[21px] text-marca-escura tracking-[-0.02em]">SUV e caminhonete</span>
+          <span className="font-noto font-normal text-[13px] text-[#93a2aa]">até 3,5 t</span>
+        </div>
+        <div className="py-[14px] flex justify-between items-baseline md:border-b md:border-[#e2e8e4]">
+          <span className="font-bricolage font-bold text-[21px] text-marca-escura tracking-[-0.02em]">Van e utilitário</span>
+          <span className="font-noto font-normal text-[13px] text-[#93a2aa]">sob consulta</span>
+        </div>
+      </div>
+    </RevealWrapper>
   );
 }
