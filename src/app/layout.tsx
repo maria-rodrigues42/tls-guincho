@@ -27,7 +27,7 @@ const overpassMono = Overpass_Mono({
 export const metadata: Metadata = {
   title: "TLS Auto Guincho — 24 horas em Três Lagoas e região",
   description:
-    "Guincho 24 horas em Três Lagoas e região. Reboque de moto, carro, utilitário e pesado. Chame pelo WhatsApp: (67) 99180-0229.",
+    "Guincho 24 horas em Três Lagoas e região. Reboque de moto, carro, utilitário e pesado. Chame agora pelo WhatsApp.",
 };
 
 export default function RootLayout({
