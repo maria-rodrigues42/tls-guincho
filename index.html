@@ -15,24 +15,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-marca-escura antialiased">
-  <div class="max-w-[440px] mx-auto min-h-screen relative bg-fundo shadow-2xl pb-10 overflow-hidden">
+  <div class="w-full min-h-screen relative bg-fundo pb-10 overflow-hidden">
     
     <!-- Header -->
     <header class="relative z-10 flex items-center justify-center py-8 px-5 w-full bg-[#101e6f]">
-      <img src="logo.png" alt="TLS Auto Guincho Logo" class="object-contain w-[220px] h-auto max-h-[80px]" />
+      <img src="logo.png" alt="TLS Auto Guincho Logo" class="object-contain w-[220px] h-auto max-h-[80px] md:max-h-[100px] md:w-[280px]" />
     </header>
 
     <main>
       <!-- Hero -->
-      <section class="reveal relative z-10 overflow-hidden">
-        <div class="relative min-h-[390px] flex flex-col justify-end px-5 pt-[26px] pb-7 overflow-hidden">
-          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-truck-front"></div>
-          <div class="absolute inset-0 bg-gradient-to-b from-[rgba(28,40,48,0.32)] via-[rgba(28,40,48,0.4)] to-[rgba(28,40,48,0.92)]"></div>
-          <div class="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#101e6f] to-transparent"></div>
-          <div class="relative z-10">
-            <h1 class="m-0 font-bricolage font-extrabold text-[52px] leading-[0.92] text-fundo tracking-[-0.04em]">Não fica na mão.</h1>
-            <div class="mt-1.5 font-zalando font-bold text-[38px] leading-none text-marca-clara tracking-[-0.01em] [font-stretch:125%]">a gente te tira daí.</div>
-            <p class="mt-4 font-noto font-normal text-base leading-[1.55] text-[rgba(247,248,240,0.92)] max-w-[300px]">
+      <section class="reveal relative z-10 overflow-hidden w-full">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-truck-front"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[rgba(28,40,48,0.32)] via-[rgba(28,40,48,0.4)] to-[rgba(28,40,48,0.92)]"></div>
+        <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#101e6f] to-transparent"></div>
+        
+        <div class="max-w-5xl mx-auto relative min-h-[390px] md:min-h-[500px] flex flex-col justify-end px-5 pt-[26px] pb-7 md:pb-16 overflow-hidden">
+          <div class="relative z-10 md:w-3/5">
+            <h1 class="m-0 font-bricolage font-extrabold text-[52px] md:text-[68px] leading-[0.92] text-fundo tracking-[-0.04em]">Não fica na mão.</h1>
+            <div class="mt-1.5 font-zalando font-bold text-[38px] md:text-[48px] leading-none text-marca-clara tracking-[-0.01em] [font-stretch:125%]">a gente te tira daí.</div>
+            <p class="mt-4 md:mt-6 font-noto font-normal text-base md:text-xl leading-[1.55] text-[rgba(247,248,240,0.92)] max-w-[300px] md:max-w-md">
               Guincho 24 horas em Três Lagoas. Chama no WhatsApp, combina o preço na hora e relaxa — o resto é com a gente.
             </p>
           </div>
@@ -40,95 +41,95 @@
       </section>
 
       <!-- Botão Hero -->
-      <section class="reveal relative z-10 px-4 pt-[30px] pb-1.5 flex flex-col items-center">
-        <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 no-underline bg-zap text-white font-bricolage font-extrabold text-[19px] px-8 py-4 rounded-2xl shadow-[0_4px_24px_rgba(37,211,102,0.4)] transition-transform hover:scale-105 active:scale-95">
-          <img src="images/image-removebg-preview.png" alt="WhatsApp" width="32" height="32" class="brightness-0 invert drop-shadow-sm" />
+      <section class="reveal relative z-10 px-4 pt-[30px] md:pt-12 pb-1.5 flex flex-col items-center">
+        <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 no-underline bg-zap text-white font-bricolage font-extrabold text-[19px] md:text-[22px] px-8 md:px-10 py-4 md:py-5 rounded-2xl md:rounded-3xl shadow-[0_4px_24px_rgba(37,211,102,0.4)] transition-transform hover:scale-105 active:scale-95">
+          <img src="images/image-removebg-preview.png" alt="WhatsApp" width="32" height="32" class="brightness-0 invert drop-shadow-sm md:w-9 md:h-9" />
           Entre em Contato
         </a>
-        <div class="mt-[11px] text-center font-noto font-medium text-[13px] text-[#7a8991]">
+        <div class="mt-[11px] md:mt-4 text-center font-noto font-medium text-[13px] md:text-[15px] text-[#7a8991]">
           Você fala com gente de verdade — não com robô.
         </div>
       </section>
 
       <!-- Como Funciona -->
-      <section class="reveal relative z-10 px-5 pt-[34px] pb-1.5">
-        <div class="font-bricolage font-extrabold text-[28px] text-marca-escura tracking-[-0.03em] text-center mb-6">Como funciona</div>
-        <div class="flex flex-col gap-4">
-          <div class="flex gap-[14px] items-baseline">
-            <span class="font-zalando font-bold text-[28px] text-marca min-w-[42px] [font-stretch:125%]">1</span>
+      <section class="reveal relative z-10 px-5 pt-[34px] md:pt-16 pb-1.5 max-w-5xl mx-auto">
+        <div class="font-bricolage font-extrabold text-[28px] md:text-[40px] text-marca-escura tracking-[-0.03em] text-center mb-6 md:mb-12">Como funciona</div>
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 md:gap-10">
+          <div class="flex gap-[14px] items-baseline md:flex-1 md:bg-white md:p-6 md:rounded-2xl md:shadow-sm md:border md:border-gray-100">
+            <span class="font-zalando font-bold text-[28px] md:text-[36px] text-marca min-w-[42px] [font-stretch:125%]">1</span>
             <div>
-              <div class="font-bricolage font-bold text-[18px] text-marca-escura tracking-[-0.02em]">Você chama no zap</div>
-              <div class="font-noto font-normal text-[14px] leading-[1.45] text-[#66757d]">Conta onde está e o que aconteceu.</div>
+              <div class="font-bricolage font-bold text-[18px] md:text-[22px] text-marca-escura tracking-[-0.02em]">Você chama no zap</div>
+              <div class="font-noto font-normal text-[14px] md:text-[16px] md:mt-2 leading-[1.45] text-[#66757d]">Conta onde está e o que aconteceu.</div>
             </div>
           </div>
-          <div class="flex gap-[14px] items-baseline ml-6">
-            <span class="font-zalando font-bold text-[28px] text-marca min-w-[42px] [font-stretch:125%]">2</span>
+          <div class="flex gap-[14px] items-baseline ml-6 md:ml-0 md:flex-1 md:bg-white md:p-6 md:rounded-2xl md:shadow-sm md:border md:border-gray-100">
+            <span class="font-zalando font-bold text-[28px] md:text-[36px] text-marca min-w-[42px] [font-stretch:125%]">2</span>
             <div>
-              <div class="font-bricolage font-bold text-[18px] text-marca-escura tracking-[-0.02em]">A gente combina o preço</div>
-              <div class="font-noto font-normal text-[14px] leading-[1.45] text-[#66757d]">Sem susto, sem letra miúda.</div>
+              <div class="font-bricolage font-bold text-[18px] md:text-[22px] text-marca-escura tracking-[-0.02em]">A gente combina o preço</div>
+              <div class="font-noto font-normal text-[14px] md:text-[16px] md:mt-2 leading-[1.45] text-[#66757d]">Sem susto, sem letra miúda.</div>
             </div>
           </div>
-          <div class="flex gap-[14px] items-baseline">
-            <span class="font-zalando font-bold text-[28px] text-marca min-w-[42px] [font-stretch:125%]">3</span>
+          <div class="flex gap-[14px] items-baseline md:flex-1 md:bg-white md:p-6 md:rounded-2xl md:shadow-sm md:border md:border-gray-100">
+            <span class="font-zalando font-bold text-[28px] md:text-[36px] text-marca min-w-[42px] [font-stretch:125%]">3</span>
             <div>
-              <div class="font-bricolage font-bold text-[18px] text-marca-escura tracking-[-0.02em]">O guincho sai na hora</div>
-              <div class="font-noto font-normal text-[14px] leading-[1.45] text-[#66757d]">É só aguardar que o resgate tá indo.</div>
+              <div class="font-bricolage font-bold text-[18px] md:text-[22px] text-marca-escura tracking-[-0.02em]">O guincho sai na hora</div>
+              <div class="font-noto font-normal text-[14px] md:text-[16px] md:mt-2 leading-[1.45] text-[#66757d]">É só aguardar que o resgate tá indo.</div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- O que rebocamos -->
-      <section class="reveal relative z-10 px-5 pt-[30px] pb-1.5">
-        <div class="font-bricolage font-extrabold text-[28px] text-marca-escura tracking-[-0.03em] text-center mb-[18px]">O que rebocamos</div>
-        <div>
-          <div class="py-[14px] border-b border-[#e2e8e4] flex justify-between items-baseline">
-            <span class="font-bricolage font-bold text-[21px] text-marca-escura tracking-[-0.02em]">Moto</span>
-            <span class="font-noto font-normal text-[13px] text-[#93a2aa]">até 300 kg</span>
+      <section class="reveal relative z-10 px-5 pt-[30px] md:pt-16 pb-1.5 max-w-5xl mx-auto">
+        <div class="font-bricolage font-extrabold text-[28px] md:text-[40px] text-marca-escura tracking-[-0.03em] text-center mb-[18px] md:mb-10">O que rebocamos</div>
+        <div class="md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-6">
+          <div class="py-[14px] md:py-5 border-b border-[#e2e8e4] md:border-b-2 flex justify-between items-baseline">
+            <span class="font-bricolage font-bold text-[21px] md:text-[26px] text-marca-escura tracking-[-0.02em]">Moto</span>
+            <span class="font-noto font-normal text-[13px] md:text-[16px] text-[#93a2aa]">até 300 kg</span>
           </div>
-          <div class="py-[14px] border-b border-[#e2e8e4] flex justify-between items-baseline">
-            <span class="font-bricolage font-bold text-[21px] text-marca-escura tracking-[-0.02em]">Carro de passeio</span>
-            <span class="font-noto font-normal text-[13px] text-[#93a2aa]">hatch e sedan</span>
+          <div class="py-[14px] md:py-5 border-b border-[#e2e8e4] md:border-b-2 flex justify-between items-baseline">
+            <span class="font-bricolage font-bold text-[21px] md:text-[26px] text-marca-escura tracking-[-0.02em]">Carro de passeio</span>
+            <span class="font-noto font-normal text-[13px] md:text-[16px] text-[#93a2aa]">hatch e sedan</span>
           </div>
-          <div class="py-[14px] border-b border-[#e2e8e4] flex justify-between items-baseline">
-            <span class="font-bricolage font-bold text-[21px] text-marca-escura tracking-[-0.02em]">SUV e caminhonete</span>
-            <span class="font-noto font-normal text-[13px] text-[#93a2aa]">até 3,5 t</span>
+          <div class="py-[14px] md:py-5 border-b border-[#e2e8e4] md:border-b-2 flex justify-between items-baseline">
+            <span class="font-bricolage font-bold text-[21px] md:text-[26px] text-marca-escura tracking-[-0.02em]">SUV e caminhonete</span>
+            <span class="font-noto font-normal text-[13px] md:text-[16px] text-[#93a2aa]">até 3,5 t</span>
           </div>
-          <div class="py-[14px] flex justify-between items-baseline">
-            <span class="font-bricolage font-bold text-[21px] text-marca-escura tracking-[-0.02em]">Van e utilitário</span>
-            <span class="font-noto font-normal text-[13px] text-[#93a2aa]">sob consulta</span>
+          <div class="py-[14px] md:py-5 flex justify-between items-baseline md:border-b-2 md:border-[#e2e8e4]">
+            <span class="font-bricolage font-bold text-[21px] md:text-[26px] text-marca-escura tracking-[-0.02em]">Van e utilitário</span>
+            <span class="font-noto font-normal text-[13px] md:text-[16px] text-[#93a2aa]">sob consulta</span>
           </div>
         </div>
       </section>
 
       <!-- Fotos do guincho -->
-      <section class="reveal relative z-10 px-5 pt-[30px] pb-1.5">
-        <div class="font-bricolage font-extrabold text-[28px] text-marca-escura tracking-[-0.03em] text-center mb-[18px]">Nosso guincho</div>
-        <div class="grid grid-cols-[1.4fr_1fr] gap-[9px]">
-          <div class="row-span-2 rounded-lg overflow-hidden min-h-[196px] bg-cover bg-center bg-truck-front"></div>
-          <div class="rounded-lg overflow-hidden min-h-[93px] bg-cover bg-center bg-tls-cartoon"></div>
-          <div class="rounded-lg overflow-hidden min-h-[93px] bg-cover bg-center bg-truck-front"></div>
+      <section class="reveal relative z-10 px-5 pt-[30px] md:pt-16 pb-1.5 max-w-5xl mx-auto">
+        <div class="font-bricolage font-extrabold text-[28px] md:text-[40px] text-marca-escura tracking-[-0.03em] text-center mb-[18px] md:mb-10">Nosso guincho</div>
+        <div class="grid grid-cols-[1.4fr_1fr] md:grid-cols-3 gap-[9px] md:gap-4 md:h-[400px]">
+          <div class="row-span-2 md:col-span-2 rounded-lg md:rounded-2xl overflow-hidden min-h-[196px] md:min-h-0 bg-cover bg-center bg-truck-front"></div>
+          <div class="rounded-lg md:rounded-2xl overflow-hidden min-h-[93px] md:min-h-0 bg-cover bg-center bg-tls-cartoon"></div>
+          <div class="rounded-lg md:rounded-2xl overflow-hidden min-h-[93px] md:min-h-0 bg-cover bg-center bg-truck-front"></div>
         </div>
       </section>
 
       <!-- Pagamento -->
-      <section class="reveal relative z-10 px-5 pt-[30px] pb-1.5">
-        <div class="font-bricolage font-extrabold text-[28px] text-marca-escura tracking-[-0.03em] text-center mb-2">Pagamento fácil</div>
-        <p class="font-noto font-medium text-[18px] text-[#66757d] text-center">
+      <section class="reveal relative z-10 px-5 pt-[30px] md:pt-16 pb-1.5 max-w-5xl mx-auto">
+        <div class="font-bricolage font-extrabold text-[28px] md:text-[40px] text-marca-escura tracking-[-0.03em] text-center mb-2 md:mb-4">Pagamento fácil</div>
+        <p class="font-noto font-medium text-[18px] md:text-[22px] text-[#66757d] text-center">
           Aceitamos Pix e Cartão de Crédito.
         </p>
       </section>
 
       <!-- Cobertura -->
-      <section class="reveal relative z-10 px-5 pt-[30px] pb-1.5">
-        <div class="font-bricolage font-extrabold text-[28px] text-marca-escura tracking-[-0.03em] text-center mb-2">Onde a gente tá</div>
-        <p class="mx-auto mb-2 max-w-[290px] font-noto font-normal text-[15px] leading-[1.45] text-[#66757d] text-center">
+      <section class="reveal relative z-10 px-5 pt-[30px] md:pt-16 pb-1.5 max-w-5xl mx-auto">
+        <div class="font-bricolage font-extrabold text-[28px] md:text-[40px] text-marca-escura tracking-[-0.03em] text-center mb-2 md:mb-4">Onde a gente tá</div>
+        <p class="mx-auto mb-2 md:mb-8 max-w-[290px] md:max-w-xl font-noto font-normal text-[15px] md:text-[18px] leading-[1.45] text-[#66757d] text-center">
           Atendemos Três Lagoas e região. Na dúvida se a gente chega até você, é só perguntar no zap.
         </p>
-        <div class="pt-4 w-full">
+        <div class="pt-4 md:pt-2 w-full">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59683.11888422288!2d-51.699534199999995!3d-20.78340035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94909866a1f06f3d%3A0xeb11fc7873829cf9!2sTr%C3%AAs%20Lagoas%2C%20State%20of%20Mato%20Grosso%20do%20Sul%2C%20Brazil!5e0!3m2!1sen!2suk!4v1784665012073!5m2!1sen!2suk" 
-            class="w-full h-[350px] border-0 rounded-2xl shadow-lg" 
+            class="w-full h-[350px] md:h-[500px] border-0 rounded-2xl md:rounded-[32px] shadow-lg" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
@@ -139,8 +140,8 @@
   </div>
 
   <!-- CallBar flutuante -->
-  <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho!" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 transition-transform hover:scale-110 active:scale-95" aria-label="Chamar no WhatsApp">
-    <img src="images/image-removebg-preview.png" alt="WhatsApp" width="60" height="60" class="drop-shadow-lg" />
+  <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1%2C%20preciso%20de%20um%20guincho!" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 transition-transform hover:scale-110 active:scale-95" aria-label="Chamar no WhatsApp">
+    <img src="images/image-removebg-preview.png" alt="WhatsApp" width="60" height="60" class="drop-shadow-lg md:w-20 md:h-20" />
   </a>
 
   <!-- Script para animação de scroll (Reveal) -->
