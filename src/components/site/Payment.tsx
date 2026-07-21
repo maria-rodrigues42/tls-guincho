@@ -7,7 +7,7 @@ export default function Payment() {
   return (
     <section
       aria-labelledby="titulo-pagamento"
-      className="mx-auto max-w-6xl px-5 py-24"
+      className="mx-auto max-w-6xl px-5 py-20"
     >
       <SectionTitle
         sobrancelha="Sem surpresa"
@@ -15,10 +15,10 @@ export default function Payment() {
         id="titulo-pagamento"
       />
 
-      <ul className="grid gap-px border-t border-refletivo/20 sm:grid-cols-2">
+      <ul className="grid gap-px border-t border-asfalto/10 sm:grid-cols-2">
         {FORMAS_PAGAMENTO.map((forma) => (
-          <li key={forma} className="luz p-6">
-            <span className="display text-xl text-cal">{forma}</span>
+          <li key={forma} className="cartao p-6">
+            <span className="display text-xl text-asfalto">{forma}</span>
           </li>
         ))}
       </ul>

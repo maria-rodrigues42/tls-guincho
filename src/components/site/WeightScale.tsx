@@ -23,7 +23,7 @@ export default function WeightScale() {
     <section
       id="servicos"
       aria-labelledby="titulo-servicos"
-      className="mx-auto max-w-6xl px-5 py-24"
+      className="mx-auto max-w-6xl px-5 py-20"
     >
       <SectionTitle
         sobrancelha="Do mais leve ao mais pesado"
@@ -31,14 +31,14 @@ export default function WeightScale() {
         id="titulo-servicos"
       />
 
-      <ul className="grid gap-px border-t border-refletivo/20 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="grid gap-px border-t border-asfalto/10 sm:grid-cols-2 lg:grid-cols-4">
         {CLASSES.map((classe) => (
-          <li key={classe.nome} className="luz flex flex-col gap-4 p-6">
+          <li key={classe.nome} className="cartao flex flex-col gap-4 p-6">
             <div className="flex items-end" aria-hidden="true">
-              <span className={`${classe.altura} w-1.5 bg-farol`} />
+              <span className={`${classe.altura} w-1.5 bg-perigo`} />
             </div>
-            <h3 className="display text-2xl text-cal">{classe.nome}</h3>
-            <p className="text-sm leading-relaxed text-cal/65">
+            <h3 className="display text-2xl text-asfalto">{classe.nome}</h3>
+            <p className="text-sm leading-relaxed text-asfalto/65">
               {classe.descricao}
             </p>
           </li>

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import SectionTitle from "@/components/ui/SectionTitle";
+import BotaoZap from "@/components/ui/BotaoZap";
+import { LINHAS } from "@/lib/contact";
 
 /**
  * Só entram aqui detalhes visíveis na própria foto ou no material oficial
@@ -14,16 +16,18 @@ const PROVAS = [
 ] as const;
 
 export default function TruckProof() {
+  const principal = LINHAS[0];
+
   return (
     <section
       aria-labelledby="titulo-caminhao"
-      className="mx-auto max-w-6xl px-5 py-24"
+      className="mx-auto max-w-6xl px-5 py-20"
     >
       <div className="grid items-center gap-12 lg:grid-cols-2">
-        <div className="luz relative aspect-4/5 overflow-hidden sm:aspect-3/2 lg:aspect-4/5">
+        <div className="cartao relative aspect-4/5 overflow-hidden sm:aspect-3/2 lg:aspect-4/5">
           <Image
             src="/images/truck-side.jpg"
-            alt="Guincho plataforma da TLS Auto Guincho estacionado em rua de Três Lagoas, com cone de sinalização sobre a plataforma."
+            alt="Guincho plataforma da TLS Auto Guincho, com cone de sinalização sobre a plataforma."
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"
@@ -37,21 +41,25 @@ export default function TruckProof() {
             id="titulo-caminhao"
           />
 
-          <p className="max-w-md text-lg leading-relaxed text-cal/70">
+          <p className="max-w-md text-lg leading-relaxed text-asfalto/70">
             Seu veículo sobe inteiro na plataforma — não vai puxado, não
             arrasta. É esta a foto do guincho, não um catálogo.
           </p>
 
-          <dl className="mt-10 grid grid-cols-2 gap-px border-t border-refletivo/20">
+          <dl className="mt-8 grid grid-cols-2 gap-px border-t border-asfalto/10">
             {PROVAS.map((prova) => (
-              <div key={prova.rotulo} className="luz p-5">
-                <dt className="sobrancelha text-refletivo/70">{prova.rotulo}</dt>
-                <dd className="font-dado mt-2 text-base text-cal">
+              <div key={prova.rotulo} className="cartao p-5">
+                <dt className="sobrancelha text-asfalto/60">{prova.rotulo}</dt>
+                <dd className="font-dado mt-2 text-base text-asfalto">
                   {prova.valor}
                 </dd>
               </div>
             ))}
           </dl>
+
+          <BotaoZap linha={principal} className="mt-8 w-full sm:w-auto">
+            Chamar este guincho agora
+          </BotaoZap>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@ export default function Coverage() {
   return (
     <section
       aria-labelledby="titulo-cobertura"
-      className="mx-auto max-w-6xl px-5 py-24"
+      className="mx-auto max-w-6xl px-5 py-20"
     >
       <SectionTitle
         sobrancelha="Cobertura"
@@ -17,7 +17,10 @@ export default function Coverage() {
 
       <ul className="flex flex-wrap gap-3">
         {CIDADES.map((cidade) => (
-          <li key={cidade} className="luz font-dado px-4 py-3 text-sm text-cal">
+          <li
+            key={cidade}
+            className="cartao font-dado px-4 py-3 text-sm text-asfalto"
+          >
             {cidade}
           </li>
         ))}

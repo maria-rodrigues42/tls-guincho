@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-asfalto: #0b0e14;
-  --color-noite: #131a2b;
-  --color-farol: #2f7bff;
-  --color-refletivo: #7fd4ff;
-  --color-cone: #ff6a1f;
-  --color-cal: #f2f5f8;
+  --color-sinal: #edefea;
+  --color-asfalto: #1a1d1b;
+  --color-perigo: #ffc700;
+  --color-zap: #25d366;
+  --color-zap-escuro: #128c7e;
+  --color-cal: #f7f6f2;
 
   --font-display: var(--fonte-display), ui-sans-serif, system-ui, sans-serif;
   --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
@@ -19,10 +19,8 @@
     min-height: 100vh;
   }
 
-  /* Nenhum elemento interativo perde o foco visível. O brilho é estética;
-     o outline é a garantia. */
   :focus-visible {
-    outline: 2px solid var(--color-refletivo);
+    outline: 2px solid var(--color-zap-escuro);
     outline-offset: 3px;
   }
 }
@@ -47,92 +45,40 @@
     text-transform: uppercase;
   }
 
-  /* A ASSINATURA, parte 1: superfícies só brilham quando a luz bate nelas.
-     Repouso = fosco. Hover e foco = aceso, como farol em fita refletiva.
-     Uma regra só, reaproveitada em toda a página. */
-  .luz {
-    border: 1px solid rgb(127 212 255 / 0.16);
+  /* Cartão: superfície impressa, não tela de brilho. Repouso = plano,
+     hover/foco = a borda escurece e o cartão levanta — como pegar um
+     objeto de catálogo na mão. Nada de glow: isso é o clichê de fundo
+     escuro que estamos evitando de propósito. */
+  .cartao {
+    background-color: #fff;
+    border: 1px solid rgb(26 29 27 / 0.14);
     transition:
-      border-color 300ms ease,
-      box-shadow 300ms ease;
+      border-color 200ms ease,
+      box-shadow 200ms ease,
+      transform 200ms ease;
   }
 
-  /* Deliberadamente sem background-color: quem pinta o fundo é o markup,
-     com bg-noite. Foi essa disputa entre classe e utilitário que fazia
-     .clean-card e .btn-modern se anularem no CSS antigo. */
-
-  .luz:hover,
-  .luz:focus-within {
-    border-color: rgb(127 212 255 / 0.85);
-    box-shadow:
-      0 0 32px -8px rgb(127 212 255 / 0.5),
-      inset 0 0 24px -16px rgb(127 212 255 / 0.9);
+  .cartao:hover,
+  .cartao:focus-within {
+    border-color: rgb(26 29 27 / 0.4);
+    box-shadow: 0 14px 28px -16px rgb(26 29 27 / 0.28);
+    transform: translateY(-2px);
   }
 
-  /* Já acesa em repouso. Marca o que é primário sem usar outra cor. */
-  .luz-acesa {
-    border-color: rgb(127 212 255 / 0.6);
-  }
-
-  /* A ASSINATURA, parte 2: uma única passada de luz rasante na abertura. */
-  .varredura {
-    position: relative;
-    display: block;
-    overflow: hidden;
-  }
-
-  .varredura::after {
-    content: "";
-    position: absolute;
-    inset-block: -20%;
-    left: 0;
-    width: 38%;
-    pointer-events: none;
-    mix-blend-mode: screen;
-    background: linear-gradient(
-      100deg,
-      transparent,
-      rgb(127 212 255 / 0.28) 45%,
-      rgb(255 255 255 / 0.42) 50%,
-      rgb(127 212 255 / 0.28) 55%,
-      transparent
-    );
-    animation: varrer 1400ms cubic-bezier(0.4, 0, 0.2, 1) 260ms both;
-  }
-
-  @keyframes varrer {
-    from {
-      transform: translateX(-140%) skewX(-12deg);
-    }
-    to {
-      transform: translateX(320%) skewX(-12deg);
-    }
-  }
-
-  /* Faixa de sinalização traseira: é aqui que o laranja do cone se justifica. */
-  .chevron {
+  /* Faixa de risco: amarelo e preto de sinalização real de guincho —
+     a mesma linguagem visual da fita que já existe no equipamento do
+     cliente, não uma decoração abstrata. */
+  .risco {
     height: 14px;
-    background-color: var(--color-noite);
     background-image: repeating-linear-gradient(
       115deg,
-      var(--color-farol) 0 20px,
-      var(--color-cone) 20px 40px
+      var(--color-perigo) 0 20px,
+      var(--color-asfalto) 20px 40px
     );
-    border-top: 1px solid rgb(127 212 255 / 0.35);
-    border-bottom: 1px solid rgb(11 14 20 / 0.9);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* A varredura não roda, e nada nasce dependendo dela para ser legível. */
-  .varredura::after {
-    display: none;
-  }
-
-  .luz {
-    border-color: rgb(127 212 255 / 0.5);
-  }
-
   *,
   *::before,
   *::after {

@@ -1,7 +1,7 @@
 /**
- * Faixa de sinalização traseira. Divisor estrutural, e o único lugar onde
- * o laranja do cone aparece em área — é onde ele se justifica.
+ * Faixa de risco: amarelo e preto de sinalização real de guincho — a
+ * mesma linguagem visual da fita que já existe no equipamento do cliente.
  */
 export default function ChevronDivider() {
-  return <div className="chevron" role="presentation" />;
+  return <div className="risco" role="presentation" />;
 }
