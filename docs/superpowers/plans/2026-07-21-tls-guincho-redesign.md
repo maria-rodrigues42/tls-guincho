@@ -951,9 +951,10 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 As duas leem de módulos de dados e **retornam `null` quando o array está vazio**. Assim é impossível publicar cidade ou forma de pagamento inventada, e a seção aparece sozinha no instante em que o dado real for preenchido.
 
-**Pagamento ships visível:** Pix e cartão de crédito, confirmados com a cliente em 2026-07-21.
+Ambas nascem visíveis, com dado confirmado com a cliente em 2026-07-21:
 
-**Cobertura ships oculta:** a cliente confirmou "Três Lagoas - MS e região", que é um fato único e já aparece na sobrancelha do herói e no rodapé. Uma seção para repetir isso numa etiqueta só seria enchimento. O componente e o módulo ficam prontos para quando houver a lista de municípios.
+- **Pagamento:** Pix e cartão de crédito.
+- **Cobertura:** Três Lagoas mais os quatro municípios limítrofes — Água Clara, Brasilândia, Inocência e Selvíria.
 
 **Files:**
 - Create: `src/lib/coverage.ts`
@@ -964,7 +965,7 @@ As duas leem de módulos de dados e **retornam `null` quando o array está vazio
 **Interfaces:**
 - Consumes: `SectionTitle` (Tarefa 3).
 - Produces:
-  - `CIDADES: readonly string[]` — vazio por decisão, ver acima
+  - `CIDADES: readonly string[]` — 5 itens, `"Três Lagoas"` primeiro
   - `FORMAS_PAGAMENTO: readonly string[]` — `["Pix", "Cartão de crédito"]`
   - `<Coverage />` e `<Payment />`, ambos sem props, ambos renderizando `null` quando o array correspondente está vazio.
 
@@ -974,19 +975,24 @@ Crie `src/lib/coverage.ts`:
 
 ```ts
 /**
- * Municípios atendidos, um por item.
+ * Municípios atendidos, base primeiro e o resto em ordem alfabética.
  *
- * Intencionalmente vazio. A cliente confirmou apenas "Três Lagoas - MS e
- * região", que é um fato único, não uma lista — e ele já aparece na
- * sobrancelha do herói e no rodapé. Uma seção inteira para repetir isso em
- * uma etiqueta só seria enchimento.
+ * Os quatro além de Três Lagoas são exatamente os municípios que fazem
+ * divisa com ela: Água Clara (oeste), Brasilândia (sul), Inocência (norte)
+ * e Selvíria (norte).
  *
- * Preencha quando houver a lista real de municípios: a seção "Até onde
- * vamos" passa a ser renderizada sozinha. Não preencha com suposição —
- * publicar uma cidade que o cliente não atende gera chamada que ele não
- * pode cumprir.
+ * Se este array ficar vazio, a seção "Até onde vamos" deixa de ser
+ * renderizada. Não acrescente cidade sem o cliente confirmar que atende:
+ * publicar uma cidade que ele não cobre gera chamada que ele não pode
+ * cumprir, e quem ligou perde tempo que não tem.
  */
-export const CIDADES: readonly string[] = [];
+export const CIDADES: readonly string[] = [
+  "Três Lagoas",
+  "Água Clara",
+  "Brasilândia",
+  "Inocência",
+  "Selvíria",
+];
 ```
 
 Crie `src/lib/payment.ts`:
@@ -1315,8 +1321,8 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 ## Pendências para a cliente
 
-Depois da Tarefa 9 o site está publicável. Uma seção segue oculta:
+Depois da Tarefa 9 o site está publicável. Confirme estes pontos com o cliente **antes de publicar**:
 
-- **Cidades atendidas** → preencher `CIDADES` em `src/lib/coverage.ts` com a lista real de municípios. A seção "Até onde vamos" aparece sozinha. Enquanto não houver lista, "Três Lagoas e região · MS" cobre o assunto no herói e no rodapé.
-
-Vale também confirmar com o cliente, para enriquecer a Tarefa 6: se usam cintas de amarração certificadas, e se atendem recarga de bateria no local — o site antigo afirmava as duas coisas, mas nenhuma aparece no material oficial, então saíram.
+1. **As cinco cidades de `src/lib/coverage.ts`.** A lista foi montada a partir dos municípios que fazem divisa com Três Lagoas — é geografia, não é confirmação de que o guincho vai até lá. Remova qualquer uma que ele não atenda.
+2. **Cidades do lado de São Paulo.** Castilho, Andradina e Ilha Solteira ficam do outro lado da ponte sobre o rio Paraná, mais perto que alguns municípios de MS. Se ele atende, vale acrescentar.
+3. **Cintas de amarração certificadas** e **recarga de bateria no local.** O site antigo afirmava as duas coisas, nenhuma aparece no material oficial, e por isso saíram. Se ele confirmar, a primeira entra na Tarefa 6 e a segunda vira uma quinta classe na Tarefa 5.
