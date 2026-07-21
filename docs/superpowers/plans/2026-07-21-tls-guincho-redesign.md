@@ -688,7 +688,7 @@ export default function Hero() {
   return (
     <section className="mx-auto max-w-6xl px-5 pb-20 pt-16 sm:pt-24">
       <span className="sobrancelha text-refletivo">
-        24 horas · Três Lagoas e região
+        24 horas · Três Lagoas e região · MS
       </span>
 
       <h1 className="mt-6 max-w-4xl">
@@ -949,7 +949,11 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 ### Task 7: Cobertura e pagamento — seções que não podem mentir
 
-As duas dependem de informação que o cliente ainda não confirmou. A estratégia: os dados vivem em arrays vazios e as seções **retornam `null` quando o array está vazio**. Assim é impossível publicar cidade ou forma de pagamento inventada, e as seções aparecem sozinhas no instante em que o dado real for preenchido.
+As duas leem de módulos de dados e **retornam `null` quando o array está vazio**. Assim é impossível publicar cidade ou forma de pagamento inventada, e a seção aparece sozinha no instante em que o dado real for preenchido.
+
+**Pagamento ships visível:** Pix e cartão de crédito, confirmados com a cliente em 2026-07-21.
+
+**Cobertura ships oculta:** a cliente confirmou "Três Lagoas - MS e região", que é um fato único e já aparece na sobrancelha do herói e no rodapé. Uma seção para repetir isso numa etiqueta só seria enchimento. O componente e o módulo ficam prontos para quando houver a lista de municípios.
 
 **Files:**
 - Create: `src/lib/coverage.ts`
@@ -960,8 +964,8 @@ As duas dependem de informação que o cliente ainda não confirmou. A estratég
 **Interfaces:**
 - Consumes: `SectionTitle` (Tarefa 3).
 - Produces:
-  - `CIDADES: readonly string[]` (vazio até confirmação)
-  - `FORMAS_PAGAMENTO: readonly string[]` (vazio até confirmação)
+  - `CIDADES: readonly string[]` — vazio por decisão, ver acima
+  - `FORMAS_PAGAMENTO: readonly string[]` — `["Pix", "Cartão de crédito"]`
   - `<Coverage />` e `<Payment />`, ambos sem props, ambos renderizando `null` quando o array correspondente está vazio.
 
 - [ ] **Step 1: Criar os dois módulos de dados**
@@ -970,11 +974,17 @@ Crie `src/lib/coverage.ts`:
 
 ```ts
 /**
- * Municípios atendidos, a confirmar com o cliente.
+ * Municípios atendidos, um por item.
  *
- * Enquanto este array estiver vazio, a seção "Até onde vamos" não é
- * renderizada. Não preencha com suposição: publicar uma cidade que o
- * cliente não atende gera chamada que ele não pode cumprir.
+ * Intencionalmente vazio. A cliente confirmou apenas "Três Lagoas - MS e
+ * região", que é um fato único, não uma lista — e ele já aparece na
+ * sobrancelha do herói e no rodapé. Uma seção inteira para repetir isso em
+ * uma etiqueta só seria enchimento.
+ *
+ * Preencha quando houver a lista real de municípios: a seção "Até onde
+ * vamos" passa a ser renderizada sozinha. Não preencha com suposição —
+ * publicar uma cidade que o cliente não atende gera chamada que ele não
+ * pode cumprir.
  */
 export const CIDADES: readonly string[] = [];
 ```
@@ -983,12 +993,13 @@ Crie `src/lib/payment.ts`:
 
 ```ts
 /**
- * Formas de pagamento aceitas, a confirmar com o cliente.
+ * Formas de pagamento aceitas. Confirmadas com a cliente em 2026-07-21.
  *
- * Enquanto este array estiver vazio, a seção "Como pagar" não é
- * renderizada. Não preencha com suposição.
+ * Se este array ficar vazio, a seção "Como pagar" deixa de ser renderizada.
+ * Não acrescente forma de pagamento sem confirmação — numa emergência, a
+ * pessoa decide chamar contando com o que está escrito aqui.
  */
-export const FORMAS_PAGAMENTO: readonly string[] = [];
+export const FORMAS_PAGAMENTO: readonly string[] = ["Pix", "Cartão de crédito"];
 ```
 
 - [ ] **Step 2: Criar o Coverage**
@@ -1047,7 +1058,7 @@ export default function Payment() {
         id="titulo-pagamento"
       />
 
-      <ul className="grid gap-px border-t border-refletivo/20 sm:grid-cols-3">
+      <ul className="grid gap-px border-t border-refletivo/20 sm:grid-cols-2">
         {FORMAS_PAGAMENTO.map((forma) => (
           <li key={forma} className="luz p-6">
             <span className="display text-xl text-cal">{forma}</span>
@@ -1304,9 +1315,8 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 ## Pendências para a cliente
 
-Depois da Tarefa 9, o site está publicável, mas duas seções estão ocultas. Para ligá-las:
+Depois da Tarefa 9 o site está publicável. Uma seção segue oculta:
 
-1. **Cidades atendidas** → preencher `CIDADES` em `src/lib/coverage.ts`. A seção "Até onde vamos" aparece sozinha.
-2. **Formas de pagamento** → preencher `FORMAS_PAGAMENTO` em `src/lib/payment.ts`. A seção "Como pagar" aparece sozinha.
+- **Cidades atendidas** → preencher `CIDADES` em `src/lib/coverage.ts` com a lista real de municípios. A seção "Até onde vamos" aparece sozinha. Enquanto não houver lista, "Três Lagoas e região · MS" cobre o assunto no herói e no rodapé.
 
 Vale também confirmar com o cliente, para enriquecer a Tarefa 6: se usam cintas de amarração certificadas, e se atendem recarga de bateria no local — o site antigo afirmava as duas coisas, mas nenhuma aparece no material oficial, então saíram.
