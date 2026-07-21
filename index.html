@@ -11,30 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500;700&family=Noto+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            fundo: '#F7F8F0',
-            marca: { DEFAULT: '#4A7A9D', clara: '#9CD5FF', escura: '#1c2830' },
-            zap: { DEFAULT: '#25D366', dark: '#08210F' }
-          },
-          fontFamily: {
-            bricolage: ['"Bricolage Grotesque"', 'sans-serif'],
-            noto: ['"Noto Sans"', 'sans-serif'],
-            mono: ['"IBM Plex Mono"', 'monospace'],
-            zalando: ['Archivo', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    body { background-color: #F7F8F0; }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-  </style>
+  <script src="tailwind-config.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-marca-escura antialiased">
   <div class="max-w-[440px] mx-auto min-h-screen relative bg-fundo shadow-2xl pb-10 overflow-hidden">
@@ -48,7 +26,7 @@
       <!-- Hero -->
       <section class="reveal relative z-10 overflow-hidden">
         <div class="relative min-h-[390px] flex flex-col justify-end px-5 pt-[26px] pb-7 overflow-hidden">
-          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('images/truck-front.jpg')"></div>
+          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-truck-front"></div>
           <div class="absolute inset-0 bg-gradient-to-b from-[rgba(28,40,48,0.32)] via-[rgba(28,40,48,0.4)] to-[rgba(28,40,48,0.92)]"></div>
           <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#101e6f] to-transparent"></div>
           <div class="relative z-10">
@@ -127,9 +105,9 @@
       <section class="reveal relative z-10 px-5 pt-[30px] pb-1.5">
         <div class="font-bricolage font-extrabold text-[28px] text-marca-escura tracking-[-0.03em] text-center mb-[18px]">Nosso guincho</div>
         <div class="grid grid-cols-[1.4fr_1fr] gap-[9px]">
-          <div class="row-span-2 rounded-lg overflow-hidden min-h-[196px] bg-cover bg-center" style="background-image: url('images/truck-front.jpg')"></div>
-          <div class="rounded-lg overflow-hidden min-h-[93px] bg-cover bg-center" style="background-image: url('images/tls-cartoon.jpg')"></div>
-          <div class="rounded-lg overflow-hidden min-h-[93px] bg-cover bg-center" style="background-image: url('images/truck-front.jpg')"></div>
+          <div class="row-span-2 rounded-lg overflow-hidden min-h-[196px] bg-cover bg-center bg-truck-front"></div>
+          <div class="rounded-lg overflow-hidden min-h-[93px] bg-cover bg-center bg-tls-cartoon"></div>
+          <div class="rounded-lg overflow-hidden min-h-[93px] bg-cover bg-center bg-truck-front"></div>
         </div>
       </section>
 
