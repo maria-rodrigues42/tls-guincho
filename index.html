@@ -12,8 +12,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="tailwind-config.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkblue: '#031024',
+            primaryblue: '#1144c2',
+            primarybluehover: '#0d3291',
+            brandgreen: '#1da94a',
+            brandgreenhover: '#168a3b',
+            lightbg: '#f8fafc',
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
   <style>
     html { scroll-behavior: smooth; }
   </style>
@@ -23,39 +40,44 @@
   <!-- Header Overlay on Hero -->
   <header class="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-6 md:px-12 md:py-8 text-white">
     <div class="logo">
-      <img src="logo.png" alt="TLS Auto Guincho" class="h-10 md:h-14 object-contain drop-shadow-lg" />
+      <img src="logo.png" alt="TLS Auto Guincho" class="h-10 md:h-12 object-contain drop-shadow-lg" />
     </div>
     
-    <nav class="hidden lg:flex items-center gap-8 font-medium text-sm drop-shadow-md">
-      <a href="#inicio" class="border-b-2 border-white pb-1 transition">Início</a>
-      <a href="#servicos" class="hover:text-gray-300 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Serviços</a>
-      <a href="#diferenciais" class="hover:text-gray-300 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Por que escolher</a>
-      <a href="#contato" class="hover:text-gray-300 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Contato</a>
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-[15px] drop-shadow-md">
+      <a href="#inicio" class="border-b-[2px] border-white pb-0.5 transition">Início</a>
+      <a href="#servicos" class="hover:text-gray-300 transition">Serviços</a>
+      <a href="#diferenciais" class="hover:text-gray-300 transition">Por que escolher</a>
+      <a href="#contato" class="hover:text-gray-300 transition">Contato</a>
     </nav>
     
-    <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="hidden md:flex items-center gap-2 bg-brandgreen hover:bg-brandgreenhover text-white px-5 py-2.5 rounded-lg font-bold shadow-lg transition">
-      <i class="ti ti-brand-whatsapp text-2xl"></i> WhatsApp
+    <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="hidden md:flex items-center gap-2 bg-brandgreen hover:bg-brandgreenhover text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg transition">
+      <div class="flex items-center justify-center w-6 h-6 rounded-full border-[1.5px] border-white shrink-0">
+        <i class="ti ti-brand-whatsapp text-sm"></i>
+      </div>
+      WhatsApp
     </a>
   </header>
 
   <main>
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-[600px] md:min-h-[700px] flex items-center pt-28 pb-32">
+    <section id="inicio" class="relative min-h-[600px] md:min-h-[700px] flex items-center pt-32 pb-32">
       <!-- Background Image -->
       <div class="absolute inset-0 bg-cover bg-[center_top] bg-no-repeat z-0" style="background-image: url('images/truck-front.jpg')"></div>
       
       <!-- Gradient Overlay to darken left side for text readability -->
-      <div class="absolute inset-0 bg-gradient-to-r from-darkblue/95 via-darkblue/70 to-darkblue/40 z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-darkblue via-darkblue/80 to-transparent z-10"></div>
       
       <div class="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12">
-        <div class="max-w-2xl text-white">
-          <h1 class="text-[44px] md:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight">Guincho 24 horas<br>em Três Lagoas<br>e região.</h1>
-          <p class="text-lg md:text-xl mb-10 text-gray-100 font-medium max-w-lg leading-relaxed">
-            Atendimento rápido, seguro e com preço justo para carros, motos, SUVs e utilitários.
+        <div class="max-w-xl text-white">
+          <h1 class="text-[44px] md:text-[56px] font-bold leading-[1.05] mb-6 tracking-tight">Guincho 24 horas<br>em Três Lagoas<br>e região.</h1>
+          <p class="text-lg md:text-[19px] mb-10 text-gray-200 font-normal leading-relaxed">
+            Atendimento rápido, seguro e com preço justo<br class="hidden md:block"> para carros, motos, SUVs e utilitários.
           </p>
           
-          <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="inline-flex items-center gap-4 bg-brandgreen hover:bg-brandgreenhover text-white px-6 py-4 md:px-8 md:py-4 rounded-xl shadow-xl transition hover:-translate-y-1">
-            <i class="ti ti-brand-whatsapp text-4xl"></i>
+          <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="inline-flex items-center gap-4 bg-brandgreen hover:bg-brandgreenhover text-white px-6 py-4 rounded-xl shadow-xl transition hover:-translate-y-1">
+            <div class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-white shrink-0">
+              <i class="ti ti-brand-whatsapp text-2xl"></i>
+            </div>
             <div class="flex flex-col text-left leading-tight">
               <span class="text-xl font-bold">Solicitar atendimento</span>
               <span class="text-sm font-normal text-white/90">Fale agora pelo WhatsApp</span>
@@ -66,24 +88,24 @@
     </section>
 
     <!-- Info Bar -->
-    <div class="bg-darkblue text-white border-t border-white/10 relative z-30">
+    <div class="bg-darkblue text-white relative z-30">
       <div class="max-w-7xl mx-auto px-6 md:px-12 py-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
-          <div class="flex items-center gap-3">
-            <i class="ti ti-clock text-3xl text-primaryblue"></i>
-            <span class="text-sm md:text-base font-medium leading-snug">Atendimento<br>24 horas</span>
+          <div class="flex items-center gap-4">
+            <i class="ti ti-clock text-[32px] text-[#3b82f6] font-light stroke-[1.5]"></i>
+            <span class="text-[15px] font-medium leading-snug">Atendimento<br>24 horas</span>
           </div>
-          <div class="flex items-center gap-3">
-            <i class="ti ti-shield-check text-3xl text-primaryblue"></i>
-            <span class="text-sm md:text-base font-medium leading-snug">Segurança e<br>profissionalismo</span>
+          <div class="flex items-center gap-4">
+            <i class="ti ti-shield-check text-[32px] text-[#3b82f6] font-light stroke-[1.5]"></i>
+            <span class="text-[15px] font-medium leading-snug">Segurança e<br>profissionalismo</span>
           </div>
-          <div class="flex items-center gap-3">
-            <i class="ti ti-map-pin text-3xl text-primaryblue"></i>
-            <span class="text-sm md:text-base font-medium leading-snug">Cobertura em<br>Três Lagoas e região</span>
+          <div class="flex items-center gap-4">
+            <i class="ti ti-map-pin text-[32px] text-[#3b82f6] font-light stroke-[1.5]"></i>
+            <span class="text-[15px] font-medium leading-snug">Cobertura em<br>Três Lagoas e região</span>
           </div>
-          <div class="flex items-center gap-3">
-            <i class="ti ti-credit-card text-3xl text-primaryblue"></i>
-            <span class="text-sm md:text-base font-medium leading-snug">Pix e Cartão<br>de Crédito</span>
+          <div class="flex items-center gap-4">
+            <i class="ti ti-credit-card text-[32px] text-[#3b82f6] font-light stroke-[1.5]"></i>
+            <span class="text-[15px] font-medium leading-snug">Pix e Cartão<br>de Crédito</span>
           </div>
         </div>
       </div>
@@ -94,40 +116,40 @@
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 md:gap-8 items-start mb-0 md:mb-12">
           <div class="order-2 lg:order-1 pt-4">
-            <p class="text-primaryblue font-bold tracking-widest text-sm mb-4 uppercase">Nossos Serviços</p>
-            <h2 class="text-4xl md:text-[42px] font-extrabold text-darkblue leading-tight mb-5 tracking-tight">O guincho certo<br>para cada necessidade.</h2>
-            <div class="w-16 h-1 bg-primaryblue mb-6"></div>
-            <p class="text-gray-600 text-lg mb-10 max-w-md">Atendemos com agilidade e cuidado para que você tenha tranquilidade em qualquer situação.</p>
-            <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="inline-flex items-center gap-2 bg-primaryblue hover:bg-primarybluehover text-white px-8 py-3.5 rounded-lg font-bold shadow-md transition hover:-translate-y-1">
+            <p class="text-primaryblue font-bold tracking-wider text-[13px] mb-4 uppercase">Nossos Serviços</p>
+            <h2 class="text-4xl md:text-[44px] font-bold text-darkblue leading-[1.1] mb-5 tracking-tight">O guincho certo<br>para cada necessidade.</h2>
+            <div class="w-12 h-[3px] bg-primaryblue mb-6"></div>
+            <p class="text-gray-600 text-lg mb-10 max-w-[400px] leading-relaxed">Atendemos com agilidade e cuidado para que<br class="hidden md:block"> você tenha tranquilidade em qualquer situação.</p>
+            <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="inline-flex items-center gap-2 bg-primaryblue hover:bg-primarybluehover text-white px-7 py-3.5 rounded-lg font-semibold shadow-md transition hover:-translate-y-1">
               <i class="ti ti-brand-whatsapp text-xl"></i> Chamar no WhatsApp
             </a>
           </div>
           <div class="order-1 lg:order-2 h-full">
-            <img src="images/truck-front.jpg" alt="Guincho TLS Serviço" class="rounded-2xl shadow-xl w-full object-cover h-[350px] md:h-[450px]" />
+            <img src="images/fotosite.jpeg" alt="Guincho TLS Serviço" class="rounded-2xl shadow-xl w-full object-cover h-[350px] md:h-[420px] object-right" />
           </div>
         </div>
         
         <!-- Cards overlapping the image slightly via negative margin -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-20 mt-8 lg:-mt-24">
-          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-lg transition group">
-             <i class="ti ti-car text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
-             <h3 class="text-xl font-extrabold text-darkblue mb-3">Carros</h3>
-             <p class="text-gray-500 text-sm leading-relaxed">Hatch, sedan e veículos nacionais e importados.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-20 mt-8 lg:-mt-[110px]">
+          <div class="bg-white p-8 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-lg transition group">
+             <i class="ti ti-car text-[44px] text-primaryblue mb-5 block group-hover:scale-110 transition-transform stroke-[1.5]"></i>
+             <h3 class="text-[19px] font-bold text-darkblue mb-3">Carros</h3>
+             <p class="text-gray-500 text-[14px] leading-relaxed">Hatch, sedan<br>e veículos nacionais<br>e importados.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-lg transition group">
-             <i class="ti ti-motorbike text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
-             <h3 class="text-xl font-extrabold text-darkblue mb-3">Motos</h3>
-             <p class="text-gray-500 text-sm leading-relaxed">Transporte seguro para motos de até 300 kg.</p>
+          <div class="bg-white p-8 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-lg transition group">
+             <i class="ti ti-motorbike text-[44px] text-primaryblue mb-5 block group-hover:scale-110 transition-transform stroke-[1.5]"></i>
+             <h3 class="text-[19px] font-bold text-darkblue mb-3">Motos</h3>
+             <p class="text-gray-500 text-[14px] leading-relaxed">Transporte seguro<br>para motos de<br>até 300 kg.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-lg transition group">
-             <i class="ti ti-car-suv text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
-             <h3 class="text-xl font-extrabold text-darkblue mb-3">SUVs e<br>caminhonetes</h3>
-             <p class="text-gray-500 text-sm leading-relaxed">Veículos de médio e grande porte até 3,5 toneladas.</p>
+          <div class="bg-white p-8 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-lg transition group">
+             <i class="ti ti-car-suv text-[44px] text-primaryblue mb-5 block group-hover:scale-110 transition-transform stroke-[1.5]"></i>
+             <h3 class="text-[19px] font-bold text-darkblue mb-3">SUVs e<br>caminhonetes</h3>
+             <p class="text-gray-500 text-[14px] leading-relaxed">Veículos de médio<br>e grande porte<br>até 3,5 toneladas.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-lg transition group">
-             <i class="ti ti-truck text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
-             <h3 class="text-xl font-extrabold text-darkblue mb-3">Utilitários<br>e vans</h3>
-             <p class="text-gray-500 text-sm leading-relaxed">Transporte de utilitários e vans. Consulte condições.</p>
+          <div class="bg-white p-8 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-lg transition group">
+             <i class="ti ti-truck text-[44px] text-primaryblue mb-5 block group-hover:scale-110 transition-transform stroke-[1.5]"></i>
+             <h3 class="text-[19px] font-bold text-darkblue mb-3">Utilitários<br>e vans</h3>
+             <p class="text-gray-500 text-[14px] leading-relaxed">Transporte de<br>utilitários e vans.<br>Consulte condições.</p>
           </div>
         </div>
       </div>
@@ -138,48 +160,51 @@
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div class="text-white z-10">
-            <p class="text-primaryblue font-bold tracking-widest text-sm mb-4 uppercase">Por que escolher a TLS?</p>
-            <h2 class="text-4xl md:text-[42px] font-extrabold leading-tight mb-6 tracking-tight">Mais que um serviço,<br>um compromisso.</h2>
-            <p class="text-gray-300 text-lg mb-10 max-w-md">Nosso compromisso é com você. Atendimento humanizado, transparente e com foco na sua segurança.</p>
+            <p class="text-primaryblue font-bold tracking-widest text-[13px] mb-4 uppercase">Por que escolher a TLS?</p>
+            <h2 class="text-4xl md:text-[44px] font-bold leading-[1.1] mb-6 tracking-tight">Mais que um serviço,<br>um compromisso.</h2>
+            <p class="text-gray-300 text-lg mb-10 max-w-[420px] leading-relaxed">Nosso compromisso é com você. Atendimento humanizado,<br class="hidden md:block"> transparente e com foco na sua segurança.</p>
             
             <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="text-gray-200 font-medium">Atendimento humanizado</span>
+              <li class="flex items-center gap-4">
+                <svg class="w-[22px] h-[22px] shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-gray-200 text-[15px] font-normal">Atendimento humanizado</span>
               </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="text-gray-200 font-medium">Disponibilidade 24 horas</span>
+              <li class="flex items-center gap-4">
+                <svg class="w-[22px] h-[22px] shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-gray-200 text-[15px] font-normal">Disponibilidade 24 horas</span>
               </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="text-gray-200 font-medium">Equipe experiente e equipada</span>
+              <li class="flex items-center gap-4">
+                <svg class="w-[22px] h-[22px] shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-gray-200 text-[15px] font-normal">Equipe experiente e equipada</span>
               </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="text-gray-200 font-medium">Cobertura em Três Lagoas e região</span>
+              <li class="flex items-center gap-4">
+                <svg class="w-[22px] h-[22px] shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-gray-200 text-[15px] font-normal">Cobertura em Três Lagoas e região</span>
               </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="text-gray-200 font-medium">Pagamento via Pix e Cartão</span>
+              <li class="flex items-center gap-4">
+                <svg class="w-[22px] h-[22px] shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-gray-200 text-[15px] font-normal">Pagamento via Pix e Cartão</span>
               </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="text-gray-200 font-medium">Preços justos e sem surpresas</span>
+              <li class="flex items-center gap-4">
+                <svg class="w-[22px] h-[22px] shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-gray-200 text-[15px] font-normal">Preços justos e sem surpresas</span>
               </li>
             </ul>
           </div>
           
           <div class="relative z-10 lg:pl-10 mt-10 lg:mt-0">
             <div class="relative inline-block w-full">
+              <!-- Usando crop da fotosite como fallback já que nao temos imagem especifica -->
               <img src="images/truck-front.jpg" alt="Guincho em Operação" class="rounded-[24px] shadow-2xl w-full object-cover h-[350px] md:h-[450px]" />
               
-              <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[90%] max-w-sm">
-                 <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="flex items-center justify-center gap-4 bg-brandgreen hover:bg-brandgreenhover text-white px-6 py-4 rounded-xl font-bold shadow-2xl transition hover:-translate-y-1">
-                   <i class="ti ti-brand-whatsapp text-4xl"></i>
+              <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-full max-w-[320px]">
+                 <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="flex items-center justify-center gap-4 bg-brandgreen hover:bg-brandgreenhover text-white px-5 py-3.5 rounded-xl font-bold shadow-2xl transition hover:-translate-y-1">
+                   <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white shrink-0">
+                     <i class="ti ti-brand-whatsapp text-2xl"></i>
+                   </div>
                    <div class="flex flex-col text-left leading-tight">
-                     <span class="text-lg">Chamar agora no WhatsApp</span>
-                     <span class="text-xs font-normal opacity-90">Atendimento rápido e sem burocracia</span>
+                     <span class="text-[17px]">Chamar agora no WhatsApp</span>
+                     <span class="text-[12px] font-normal opacity-90 mt-0.5">Atendimento rápido e sem burocracia</span>
                    </div>
                  </a>
               </div>
@@ -193,31 +218,31 @@
     <footer id="contato" class="bg-white py-10 px-6 md:px-12 border-t border-gray-100">
       <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full border-2 border-primaryblue flex items-center justify-center text-primaryblue shrink-0">
-            <i class="ti ti-map-pin text-2xl"></i>
+          <div class="w-11 h-11 rounded-full border-[1.5px] border-primaryblue flex items-center justify-center text-primaryblue shrink-0">
+            <i class="ti ti-map-pin text-xl stroke-[2]"></i>
           </div>
-          <span class="text-sm font-semibold text-gray-700 leading-snug">Três Lagoas - MS<br>e região</span>
+          <span class="text-[14px] font-medium text-gray-700 leading-snug">Três Lagoas - MS<br>e região</span>
         </div>
         
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full border-2 border-primaryblue flex items-center justify-center text-primaryblue shrink-0">
-            <i class="ti ti-clock text-2xl"></i>
+          <div class="w-11 h-11 rounded-full border-[1.5px] border-primaryblue flex items-center justify-center text-primaryblue shrink-0">
+            <i class="ti ti-clock text-xl stroke-[2]"></i>
           </div>
-          <span class="text-sm font-semibold text-gray-700 leading-snug">Atendimento<br>24 horas</span>
+          <span class="text-[14px] font-medium text-gray-700 leading-snug">Atendimento<br>24 horas</span>
         </div>
         
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full border-2 border-primaryblue flex items-center justify-center text-primaryblue shrink-0">
-            <i class="ti ti-credit-card text-2xl"></i>
+          <div class="w-11 h-11 rounded-full border-[1.5px] border-primaryblue flex items-center justify-center text-primaryblue shrink-0">
+            <i class="ti ti-credit-card text-xl stroke-[2]"></i>
           </div>
-          <span class="text-sm font-semibold text-gray-700 leading-snug">Aceitamos<br>Pix e Cartão</span>
+          <span class="text-[14px] font-medium text-gray-700 leading-snug">Aceitamos<br>Pix e Cartão</span>
         </div>
         
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full border-2 border-primaryblue flex items-center justify-center text-primaryblue shrink-0">
-            <i class="ti ti-shield-check text-2xl"></i>
+          <div class="w-11 h-11 rounded-full border-[1.5px] border-primaryblue flex items-center justify-center text-primaryblue shrink-0">
+            <i class="ti ti-shield-check text-xl stroke-[2]"></i>
           </div>
-          <span class="text-sm font-semibold text-gray-700 leading-snug">Empresa local e<br>comprometida</span>
+          <span class="text-[14px] font-medium text-gray-700 leading-snug">Empresa local e<br>comprometida</span>
         </div>
       </div>
     </footer>
