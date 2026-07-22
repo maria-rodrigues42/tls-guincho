@@ -2,15 +2,15 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        fundo: '#F7F8F0',
-        marca: { DEFAULT: '#4A7A9D', clara: '#9CD5FF', escura: '#1c2830' },
-        zap: { DEFAULT: '#25D366', dark: '#08210F' }
+        darkblue: '#031024',
+        primaryblue: '#1144c2',
+        primarybluehover: '#0d3291',
+        brandgreen: '#1da94a',
+        brandgreenhover: '#168a3b',
+        lightbg: '#f3f4f6',
       },
       fontFamily: {
-        bricolage: ['"Bricolage Grotesque"', 'sans-serif'],
-        noto: ['"Noto Sans"', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
-        zalando: ['Archivo', 'sans-serif'],
+        sans: ['"Inter"', 'sans-serif'],
       }
     }
   }
