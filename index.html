@@ -27,13 +27,13 @@
     </div>
     
     <nav class="hidden lg:flex items-center gap-8 font-medium text-sm drop-shadow-md">
-      <a href="#inicio" class="hover:text-gray-300 transition">Início</a>
-      <a href="#servicos" class="hover:text-gray-300 transition">Serviços</a>
-      <a href="#diferenciais" class="hover:text-gray-300 transition">Por que escolher</a>
-      <a href="#contato" class="hover:text-gray-300 transition">Contato</a>
+      <a href="#inicio" class="border-b-2 border-white pb-1 transition">Início</a>
+      <a href="#servicos" class="hover:text-gray-300 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Serviços</a>
+      <a href="#diferenciais" class="hover:text-gray-300 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Por que escolher</a>
+      <a href="#contato" class="hover:text-gray-300 pb-1 border-b-2 border-transparent hover:border-gray-300 transition">Contato</a>
     </nav>
     
-    <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="hidden md:flex items-center gap-2 bg-brandgreen hover:bg-brandgreenhover text-white px-5 py-2.5 rounded-full font-bold shadow-lg transition">
+    <a href="https://api.whatsapp.com/send?phone=5567991106730&text=Ol%C3%A1" target="_blank" class="hidden md:flex items-center gap-2 bg-brandgreen hover:bg-brandgreenhover text-white px-5 py-2.5 rounded-lg font-bold shadow-lg transition">
       <i class="ti ti-brand-whatsapp text-2xl"></i> WhatsApp
     </a>
   </header>
@@ -45,7 +45,7 @@
       <div class="absolute inset-0 bg-cover bg-[center_top] bg-no-repeat z-0" style="background-image: url('images/truck-front.jpg')"></div>
       
       <!-- Gradient Overlay to darken left side for text readability -->
-      <div class="absolute inset-0 bg-gradient-to-r from-darkblue/95 via-darkblue/70 to-darkblue/20 md:to-transparent z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-darkblue/95 via-darkblue/70 to-darkblue/40 z-10"></div>
       
       <div class="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12">
         <div class="max-w-2xl text-white">
@@ -90,10 +90,10 @@
     </div>
 
     <!-- Nossos Serviços Section -->
-    <section id="servicos" class="bg-lightbg py-20 md:py-28 px-6 md:px-12">
+    <section id="servicos" class="bg-lightbg pt-20 pb-20 md:pt-28 md:pb-28 px-6 md:px-12 relative">
       <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 md:gap-20 items-center mb-16">
-          <div class="order-2 lg:order-1">
+        <div class="grid lg:grid-cols-2 gap-12 md:gap-8 items-start mb-0 md:mb-12">
+          <div class="order-2 lg:order-1 pt-4">
             <p class="text-primaryblue font-bold tracking-widest text-sm mb-4 uppercase">Nossos Serviços</p>
             <h2 class="text-4xl md:text-[42px] font-extrabold text-darkblue leading-tight mb-5 tracking-tight">O guincho certo<br>para cada necessidade.</h2>
             <div class="w-16 h-1 bg-primaryblue mb-6"></div>
@@ -102,28 +102,29 @@
               <i class="ti ti-brand-whatsapp text-xl"></i> Chamar no WhatsApp
             </a>
           </div>
-          <div class="order-1 lg:order-2">
-            <img src="images/truck-front.jpg" alt="Guincho TLS Serviço" class="rounded-2xl shadow-xl w-full object-cover h-[300px] md:h-[400px]" />
+          <div class="order-1 lg:order-2 h-full">
+            <img src="images/truck-front.jpg" alt="Guincho TLS Serviço" class="rounded-2xl shadow-xl w-full object-cover h-[350px] md:h-[450px]" />
           </div>
         </div>
         
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition group">
+        <!-- Cards overlapping the image slightly via negative margin -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-20 mt-8 lg:-mt-24">
+          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-lg transition group">
              <i class="ti ti-car text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
              <h3 class="text-xl font-extrabold text-darkblue mb-3">Carros</h3>
              <p class="text-gray-500 text-sm leading-relaxed">Hatch, sedan e veículos nacionais e importados.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition group">
+          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-lg transition group">
              <i class="ti ti-motorbike text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
              <h3 class="text-xl font-extrabold text-darkblue mb-3">Motos</h3>
              <p class="text-gray-500 text-sm leading-relaxed">Transporte seguro para motos de até 300 kg.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition group">
-             <i class="ti ti-car text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
+          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-lg transition group">
+             <i class="ti ti-car-suv text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
              <h3 class="text-xl font-extrabold text-darkblue mb-3">SUVs e<br>caminhonetes</h3>
              <p class="text-gray-500 text-sm leading-relaxed">Veículos de médio e grande porte até 3,5 toneladas.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition group">
+          <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 hover:shadow-lg transition group">
              <i class="ti ti-truck text-[44px] text-primaryblue mb-6 block group-hover:scale-110 transition-transform"></i>
              <h3 class="text-xl font-extrabold text-darkblue mb-3">Utilitários<br>e vans</h3>
              <p class="text-gray-500 text-sm leading-relaxed">Transporte de utilitários e vans. Consulte condições.</p>
@@ -143,27 +144,27 @@
             
             <ul class="space-y-4">
               <li class="flex items-center gap-3">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-primaryblue shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="text-gray-200 font-medium">Atendimento humanizado</span>
               </li>
               <li class="flex items-center gap-3">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-primaryblue shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="text-gray-200 font-medium">Disponibilidade 24 horas</span>
               </li>
               <li class="flex items-center gap-3">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-primaryblue shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="text-gray-200 font-medium">Equipe experiente e equipada</span>
               </li>
               <li class="flex items-center gap-3">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-primaryblue shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="text-gray-200 font-medium">Cobertura em Três Lagoas e região</span>
               </li>
               <li class="flex items-center gap-3">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-primaryblue shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="text-gray-200 font-medium">Pagamento via Pix e Cartão</span>
               </li>
               <li class="flex items-center gap-3">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-primaryblue shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1144c2"/><path d="M17 8L10 15L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="text-gray-200 font-medium">Preços justos e sem surpresas</span>
               </li>
             </ul>
